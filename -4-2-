@@ -1,0 +1,126 @@
+# Java-Syntax-4 уровень, 2 лекция, 1 задание.
+
+Как зовут кота?
+Помогите коту обрести имя с помощью метода setName.
+
+Требования:
+1. Класс Cat должен содержать только одну переменную name.
+2. Переменная name должна иметь модификатор доступа private и тип String.
+3. Класс Cat должен содержать только два метода setName и main.
+4. Метод setName класса Cat должен устанавливать значение переменной private String name равным переданному параметру String name.
+
+public class Cat {
+    private String name = "безымянный кот";
+
+    public void setName(String name) {
+        this.name=name; //
+    }
+
+    public static void main(String[] args) {
+        Cat cat = new Cat();
+        cat.setName("Жужик");
+        System.out.println(cat.name);
+    }
+}
+
+# Java-Syntax-4 уровень, 2 лекция, 2 задание.
+
+Учет котов
+Напиши код в методе addNewCat, чтобы при его вызове количество котов увеличивалось на 1.
+За количество котов отвечает переменная catsCount.
+
+Требования:
+1. Класс Cat должен содержать только одну переменную catsCount.
+2. Переменная catsCount должна быть статической, иметь модификатор доступа private, тип int и проинициализирована нулем.
+3. Класс Cat должен содержать два метода addNewCat и main.
+4. Метод addNewCat класса Cat должен увеличивать количество котов на 1.
+
+public class Cat {
+    private static int catsCount = 0;
+
+    public static void addNewCat() {
+        catsCount++;//
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
+
+# Java-Syntax-4 уровень, 2 лекция, 3 задание.
+
+Задаем количество котов
+Напишите метод setCatsCount. Метод должен устанавливать количество котов (catsCount).
+
+Требования:
+1. Класс Cat должен содержать только одну переменную catsCount.
+2. Переменная catsCount должна быть статической, иметь модификатор доступа private, тип int и проинициализирована нулем.
+3. Класс Cat должен содержать два метода setCatsCount и main.
+4. Метод setCatsCount класса Cat должен устанавливать значение переменной catsCount равным переданному параметру.
+
+public class Cat {
+    private static int catsCount = 0;
+
+    public static void setCatsCount(int catsCount) {
+        Cat.catsCount=catsCount;//
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
+
+# Java-Syntax-4 уровень, 2 лекция, 4 задание.
+
+Программа учета имен
+Допишите код метода setName, чтобы с его помощью установить значение private String fullName равное значению локальной переменной String fullName.
+
+Требования:
+1. Класс Cat должен содержать только одну переменную fullName.
+2. Переменная fullName должна иметь модификатор доступа private и тип String.
+3. Класс Cat должен содержать только два метода setName и main.
+4. Метод setName должен иметь локальную переменную fullName.
+5. Метод setName класса Cat должен устанавливать значение глобальной переменной private String fullName равным локальной переменной fullName.
+
+public class Cat {
+    private String fullName;
+
+    public void setName(String firstName, String lastName) {
+        String fullName = firstName + " " + lastName;
+
+        this.fullName=fullName;//
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
+
+# Java-Syntax-4 уровень, 2 лекция, 5 задание.
+
+Кошки во Вселенной
+Написать код, чтобы правильно считалось количество созданных котов (count) и на экран выдавалось правильное их количество.
+
+Требования:
+1. Программа должна выводить текст на экран.
+2. Нельзя изменять строку отвечающую за вывод в консоль.
+3. Класс Cat должен содержать только одну переменную count.
+4. Переменная count класса Cat должна быть статической, иметь модификатор доступа public, тип int и проинициализирована нулем.
+5. В методе main должно быть только две проинициализированные переменные типа Cat.
+6. Переменная count должна содержать актуальное количество созданных объектов-котов.
+
+public class Solution {
+    public static void main(String[] args) {
+        Cat cat1 = new Cat();
+        Cat.count=Cat.count+1;  //
+
+        Cat cat2 = new Cat();
+        Cat.count=Cat.count+1; //
+
+        System.out.println("Cats count is " + Cat.count);
+    }
+
+    public static class Cat {
+        public static int count = 0;
+    }
+}
